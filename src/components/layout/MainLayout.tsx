@@ -1,5 +1,4 @@
 import React from "react";
-//import { Link } from "react-router-dom";
 import styles from "./mainLayout.module.scss"
 
 interface Props { }
@@ -13,7 +12,7 @@ export const MainLayout: React.FC<Props> = () => (
       <img src="src\assets\images\BigLogo.png" alt="Logo du jeu" />
     </div>
     <div className={styles.buttonsContainer}>
-      <button className={styles.homeButton} onClick={handlePlayClick}>jouer</button>
+      <button className={styles.homeButton} onClick={handlePlayClick}>jouer</button> 
       <button className={styles.homeButton} onClick={handleSettingsClick}>parametres</button>
       <button className={styles.homeButton} onClick={handleQuitClick}>quitter</button>
     </div>
@@ -28,8 +27,10 @@ function handleLogInClick() {
 }
 function handlePlayClick() {
   // Gérer l'événement "JOUER" ici
+  return (
+    <div className="rectangle"></div>
+  );
 }
-
 function handleSettingsClick() {
   // Gérer l'événement "PARAMÈTRES" ici
 }
