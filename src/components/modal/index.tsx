@@ -11,7 +11,7 @@ const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
   return (
     <>
     <div
-        className=""
+        className="bg-black"
         style={{ display: show ? 'flex' : 'none' }}
     >
       <div>

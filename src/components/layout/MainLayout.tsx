@@ -7,7 +7,7 @@ export const MainLayout: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
   return (
     <>
-      <div className="">
+      <div className="bg-black">
         <div className="">
           <button className="" onClick={() => {}}>
             connexion
