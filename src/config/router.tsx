@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "../components/layout/MainLayout";
-import { GamePage } from "../components/pages/GamePage";
+//import { GamePage } from "../pages/";
 import { MenuLayout } from "../components/layout/MenuLayout";
 import { LoginMenu } from "../components/menu/LoginMenu";
 import { RegistrationMenu } from "../components/menu/RegistrationMenu";
@@ -28,10 +28,10 @@ export const router = createBrowserRouter([
         path: "parameter",
         element: <ParameterMenu/>,
       },
-      {
-        path: "lobby",
-        element: <GamePage/>,
-      },
+      // {
+      //   path: "lobby",
+      //   element: <GamePage/>,
+      // },
     ],
   },
 ]);
