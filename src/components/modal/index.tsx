@@ -10,11 +10,10 @@ const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
 
   return (
     <>
-    <div
-        className="bg-black"
-        style={{ display: show ? 'flex' : 'none' }}
-    >
-      <div>
+    <div className="absolute top-20 left-1/3 flex flex-col items-center">
+      <div className="w-[500px] h-[500px] bg-black opacity-50"
+        style={{ display: show ? 'flex' : 'none' }}>
+      </div>
         <button
             className=""
             onClick={() => setShow(false)}
@@ -23,7 +22,6 @@ const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
         </button>
         {children}
       </div>
-    </div>
     </>
   );
 };
