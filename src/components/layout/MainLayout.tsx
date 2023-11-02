@@ -1,41 +1,39 @@
-import React from "react";
-import styles from "./mainLayout.module.scss"
+import React, { useState } from "react";
+import Modal from "../modal/index";
 
-interface Props { }
-export const MainLayout: React.FC<Props> = () => (
-  <div className={styles.MainLayout}>
-    <div className={styles.header}>
-      <button className={styles.headerButton} onClick={handleLogInClick}>connexion</button>
-      <button className={styles.headerButton} onClick={handleSignInClick}>inscription</button>
-    </div>
-    <div className={styles.logo}>
-      <img src="src\assets\images\BigLogo.png" alt="Logo du jeu" />
-    </div>
-    <div className={styles.buttonsContainer}>
-      <button className={styles.homeButton} onClick={handlePlayClick}>jouer</button> 
-      <button className={styles.homeButton} onClick={handleSettingsClick}>parametres</button>
-      <button className={styles.homeButton} onClick={handleQuitClick}>quitter</button>
-    </div>
-  </div>
-);
+interface Props {}
 
-function handleSignInClick() {
-  // Gérer l'événement "INSCRIPTION" ici
-}
-function handleLogInClick() {
-  // Gérer l'événement "CONNEXION" ici
-}
-function handlePlayClick() {
-  // Gérer l'événement "JOUER" ici
+export const MainLayout: React.FC<Props> = () => {
+  const [open, setIsOpen] = useState(false);
   return (
-    <div className="rectangle"></div>
+    <>
+      <div className="">
+        <div className="">
+          <button className="" onClick={() => {}}>
+            connexion
+          </button>
+          <button className="" onClick={() => {}}>
+            inscription
+          </button>
+        </div>
+        <div className="">
+          <img src="src\assets\images\BigLogo.png" alt="Logo du jeu" />
+        </div>
+        <div className="">
+          <button className="" onClick={() => setIsOpen(true)}>
+            jouer
+          </button>
+          <button className="" onClick={() => {}}>
+            parametres
+          </button>
+          <button className="" onClick={() => {}}>
+            quitter
+          </button>
+        </div>
+        <Modal show={open} setShow={() => setIsOpen(false)}>
+          <h1>ihbevivebeibi</h1>
+        </Modal>
+      </div>
+    </>
   );
-}
-function handleSettingsClick() {
-  // Gérer l'événement "PARAMÈTRES" ici
-}
-
-function handleQuitClick() {
-  // Gérer l'événement "QUITTER" ici
-}
-
+};
