@@ -6,13 +6,13 @@ interface Props { }
 
 export const ParameterMenu: React.FC<Props> = () => (
   <div className="flex flex-col font-[1000] text-2xl font-font">
-    <div>
+    <div className="mb-[20px]">
       MODE
-      <div className="mt-[5px]">
-        <button className="">
+      <div className="flex justify-center gap-[30px] my-[10px] ">
+        <button className="button bg-orange">
           <Link to={"/"}>NORMAL</Link>
         </button>
-        <button>
+        <button className="button bg-orange">
           <Link to={"/"}>REVERSE</Link>
         </button>
       </div>
@@ -20,8 +20,8 @@ export const ParameterMenu: React.FC<Props> = () => (
     <div>
       VOLUME
     </div>
-    <div className="self-end">
-      <button>
+    <div className="self-end mt-[70px] sm:mt-[215px] md:mt-[200px]">
+      <button className="button bg-orange text-[17px] px-[15px] py-[0px]">
         <Link to={"/"}>FERMER</Link>
       </button>
     </div>

@@ -12,8 +12,8 @@ export const MenuLayout: React.FC<Props> = () => (
     </div>
     <div className=" 
       relative flex bg-white mx-auto max-w-[420px] h-[300px] rounded-xl p-[20px] 
-      sm:max-w-[580px] sm:h-[450px]
-      lg:top-[-55px] lg:max-w-[650px]
+      sm:max-w-[580px] sm:h-[450px] 
+      lg:top-[-55px] lg:max-w-[650px] 
       xl:max-w-[750px] xl:h-[500px] xl:top-[-90px]
     ">
       <div className="w-full">
