@@ -1,7 +1,5 @@
 import React from "react";
 
-interface Props { } 
+interface Props {}
 
-export const LoginMenu: React.FC<Props> = () => (
-  <div></div>
-);
+export const LoginMenu: React.FC<Props> = () => <div></div>;

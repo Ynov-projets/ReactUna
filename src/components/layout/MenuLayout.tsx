@@ -1,18 +1,20 @@
-import React from "react";
-import styles from "./menuLayout.module.scss"
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../assets/images/BigLogo.png"
 
-interface Props { }
+import React from "react";
+import logo from "../../assets/images/BigLogo.png";
+import styles from "./menuLayout.module.scss";
+
+interface Props {}
 export const MenuLayout: React.FC<Props> = () => (
-  <div className={styles.container}/*bg-cackground pl-[5px] pt-[15px] */>
+  <>
+    <div className="bg-cackground pl-[5px] pt-[15px]" />
     <div>
-      <Link to={"/"} className={styles.logo}/* block w-[270px] h-auto overflow-hidden*/>
-        <img src={logo} alt="logo" /*className="w-full h-auto"*//>
+      <Link to={"/"} className="block w-[270px] h-auto overflow-hidden">
+        <img className="" src={logo} alt="logo" />
       </Link>
     </div>
     <div className={styles.tab}>
-      <Outlet/>
+      <Outlet />
     </div>
-  </div>
+  </>
 );
