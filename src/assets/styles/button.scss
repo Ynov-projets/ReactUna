@@ -1,8 +1,8 @@
-button {
-  padding: 20px 40px;
+.button {
+  padding: 5px 10px;
   text-transform: uppercase;
-  font-size: 30px;
-  margin: 20px;
+  font-size: 23px;
+  margin: 5px;
   border: none;
   cursor: pointer;
   color: white;
@@ -11,4 +11,28 @@ button {
   transition: background-color 0.2s;
   font-family: 'Josefin Sans', italic;
   font-weight: 1000;
+
+  @media screen and (min-width:640px) {
+    padding: 10px 20px;
+    margin: 5px 10px;
+    font-size: 25px;
+  }
+
+  @media screen and (min-width:768px) {
+    padding: 13px 30px;
+    margin: 5px 10px;
+    font-size: 25px;
+  }
+
+  @media screen and (min-width:1024px) {}
+
+  @media screen and (min-width: 1280px) {
+    padding: 20px 40px;
+    margin: 20px;
+    font-size: 30px;
+  }
+
+
+
+
 }
