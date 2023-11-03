@@ -11,12 +11,14 @@ export const MenuLayout: React.FC<Props> = () => (
       </Link>
     </div>
     <div className=" 
-      relative flex justify-center bg-white mx-auto max-w-[420px] h-[300px] rounded-xl p-[20px] 
+      relative flex bg-white mx-auto max-w-[420px] h-[300px] rounded-xl p-[20px] 
       sm:max-w-[580px] sm:h-[450px]
       lg:top-[-55px] lg:max-w-[650px]
       xl:max-w-[750px] xl:h-[500px] xl:top-[-90px]
     ">
-      <Outlet/>
+      <div className="w-full">
+        <Outlet/>
+      </div>
     </div>
   </div>
 );
