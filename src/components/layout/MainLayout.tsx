@@ -43,7 +43,6 @@ export const MainLayout: React.FC<Props> = () => {
           </button>
         </div>
         <Modal show={open} setShow={() => setIsOpen(false)}>
-          <h1>ihbevivebeibi</h1>
         </Modal>
       </div>
     </>

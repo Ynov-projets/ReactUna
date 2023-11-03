@@ -10,15 +10,18 @@ const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
 
   return (
     <>
-      <div className="absolute top-20 left-1/3 flex flex-col items-center">
-        <div
-          className="w-[500px] h-[500px] bg-black opacity-50"
-          style={{ display: show ? "flex" : "none" }}
-        ></div>
-        <button className="" onClick={() => setShow(false)}>
-          X
+    <div className="w-full absolute top-[200px] mx-auto flex flex-col items-center">
+      <div className="w-[550px] h-[500px] bg-black opacity-50"
+        style={{ display: show ? 'flex' : 'none' }}>
+      
+        <button
+            className=""
+            onClick={() => setShow(false)}
+        >
+            sdfdsfdsf
         </button>
         {children}
+        </div>
       </div>
     </>
   );
