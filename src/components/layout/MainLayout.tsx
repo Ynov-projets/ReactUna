@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../modal/index";
 import "../../assets/styles/button.scss";
+import { Link } from "react-router-dom";
 //import styles from "./mainLayout.module.scss"
 interface Props {}
 
@@ -12,23 +13,23 @@ export const MainLayout: React.FC<Props> = () => {
     h-screen
     bg-cyan-800">
         <div className="absolute top-[10px] right-[10px]">
-          <button className="
+          <Link className="
                             mx-2 px-3 py-2 
                             uppercase 
                             border-none 
                             bg-transparent 
                             text-white text-base ml-2 
-                            hover:shadow-lg hover:bg-cyan-600" onClick={() => {}}>
+                            hover:shadow-lg hover:bg-cyan-600" to="/menu/login">
             connexion
-          </button>
-          <button className="px-3 py-2 
+          </Link>
+          <Link className="px-3 py-2 
                             uppercase 
                             border-solid border-[1px] border-white
                             bg-transparent 
                             text-white text-base ml-2  
-                            hover:shadow-xl hover:bg-cyan-600" onClick={() => {}}>
+                            hover:shadow-xl hover:bg-cyan-600" to="/menu/registration">
             inscription
-          </button>
+          </Link>
         </div>
         <div className="flex flex-col items-center">
           <img className="mt-5 h-64" src="src\assets\images\BigLogo.png" alt="Logo du jeu" />
