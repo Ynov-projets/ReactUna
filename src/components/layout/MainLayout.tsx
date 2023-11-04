@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import Modal from "../modal/index";
-import "../../assets/styles/button.scss";
+//import "../../assets/styles/button.scss";
 import { Link } from "react-router-dom";
 //import styles from "./mainLayout.module.scss"
-interface Props {}
+interface Props { }
 
 export const MainLayout: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
   return (
     <>
-      <div className="w-full
-    h-screen
-    bg-cyan-800">
+      <div className="w-full h-screen bg-cyan-800">
         <div className="absolute top-[10px] right-[10px]">
-          <Link className="
-                            mx-2 px-3 py-2 
+          <Link to={"/menu/login"} className="mx-2 px-3 py-2 
                             uppercase 
                             border-none 
                             bg-transparent 
                             text-white text-base ml-2 
-                            hover:shadow-lg hover:bg-cyan-600" to="/menu/login">
+                            hover:shadow-lg hover:bg-cyan-600">
             connexion
           </Link>
-          <Link className="px-3 py-2 
+          <Link to={"/menu/registration"} className="px-3 py-2 
                             uppercase 
                             border-solid border-[1px] border-white
                             bg-transparent 
                             text-white text-base ml-2  
-                            hover:shadow-xl hover:bg-cyan-600" to="/menu/registration">
+                            hover:shadow-xl hover:bg-cyan-600">
             inscription
           </Link>
         </div>
@@ -38,10 +35,10 @@ export const MainLayout: React.FC<Props> = () => {
           <button className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r" onClick={() => setIsOpen(true)}>
             jouer
           </button>
-          <button className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r" onClick={() => {}}> 
+          <button className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r" onClick={() => { }}>
             parametres
           </button>
-          <button className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r" onClick={() => {}}>
+          <button className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r" onClick={() => { }}>
             quitter
           </button>
         </div>
