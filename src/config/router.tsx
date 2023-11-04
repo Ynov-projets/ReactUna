@@ -1,32 +1,31 @@
-import { createBrowserRouter } from "react-router-dom";
-import { MainLayout } from "../components/layout/MainLayout";
+import { HomePage } from "../pages";
+import { LoginMenu } from "../components/menu/LoginMenu";
 //import { GamePage } from "../pages/";
 import { MenuLayout } from "../components/layout/MenuLayout";
-import { LoginMenu } from "../components/menu/LoginMenu";
-import { RegistrationMenu } from "../components/menu/RegistrationMenu";
 import { ParameterMenu } from "../components/menu/ParameterMenu";
-
+import { RegistrationMenu } from "../components/menu/RegistrationMenu";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <HomePage />,
   },
   {
     path: "/menu",
-    element: <MenuLayout/>,
+    element: <MenuLayout />,
     children: [
       {
         path: "login",
-        element: <LoginMenu/>,
+        element: <LoginMenu />,
       },
       {
         path: "registration",
-        element: <RegistrationMenu/>,
+        element: <RegistrationMenu />,
       },
       {
         path: "parameter",
-        element: <ParameterMenu/>,
+        element: <ParameterMenu />,
       },
       // {
       //   path: "lobby",
