@@ -2,11 +2,11 @@ import Axios from './caller.service';
 
 const login = (credentials: object) => {
 
-    return Axios.post('/api/auth/login/', credentials)
+    return Axios.post('/users/auth/login/', credentials)
 };
 
 const register = (credentials: object) => {
-    return Axios.post('/api/auth/register/', credentials)
+    return Axios.post('/users/auth/sign-up/', credentials)
 };
 
 const saveToken = (token: string ) => {

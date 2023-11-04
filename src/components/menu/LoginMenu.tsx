@@ -15,7 +15,7 @@ export const LoginMenu: React.FC<Props> = () => {
 
   const [credentials, setCredentials] = React.useState({
     email: "test@test.com",
-    password: "azerty",
+    password: "azertyuiop",
   });
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,13 +32,13 @@ export const LoginMenu: React.FC<Props> = () => {
       .login(credentials)
       .then((res) => {
         console.log(res);
-        // accountService.saveToken(res.data.data.token);
-        // setUser({
-        //   id: res.data.data.id,
-        //   username: res.data.data.username,
-        //   email: res.data.data.email,
+        accountService.saveToken(res.data.access_token);
+        //setUser({
+        //   id: res.data.id,
+        //   username: res.data.username,
+        //   email: res.data.email,
         // });
-        // navigate("/");
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
