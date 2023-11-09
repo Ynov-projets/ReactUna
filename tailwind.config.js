@@ -24,6 +24,14 @@ export default {
         DEFAULT: '#3083FF',
         dark: '#004D9E',
       },
+      black: {
+        DEFAULT: '#000000',
+        dark: '#004D9E',
+      },
+      grey: {
+        DEFAULT: '#D9D9D9',
+        dark: '#004D9E',
+      },
       text: '#2B2B2B',
     },
     fontFamily: {
