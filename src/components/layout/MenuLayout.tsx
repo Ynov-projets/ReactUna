@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../assets/images/BigLogo.png"
 
-interface Props { }
+interface Props {}
 export const MenuLayout: React.FC<Props> = () => (
   <div className="bg-background relative pl-[5px] pt-[15px] pb-[80px] h-screen ">
     <div>
