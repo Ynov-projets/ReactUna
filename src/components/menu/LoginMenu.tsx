@@ -1,16 +1,14 @@
 import React from "react";
-import { useContext } from "react";
 import { UserContext } from "../../contexts/auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu } from "./Menu";
 
-
-interface Props {}
-
-export const LoginMenu: React.FC<Props> = () => {
+export default function LoginMenu() {
   const { setUser } = useContext(UserContext);
-  const [error, setError] = React.useState("");
+  const [error] = React.useState("");
 
   const navigate = useNavigate();
 
@@ -34,37 +32,36 @@ export const LoginMenu: React.FC<Props> = () => {
       .then((res) => {
         console.log(res);
         accountService.saveToken(res.data.access_token);
-        //setUser({
-        //   id: res.data.id,
-        //   username: res.data.username,
-        //   email: res.data.email,
-        // });
+        setUser({
+          id: res.data.id,
+          username: res.data.username,
+          email: res.data.email,
+        });
         navigate("/");
       })
       .catch((err) => console.log(err));
   };
   return (
-    <Menu children={
-      <div>
-     {error !== "" && (
-              <div className="alert alert-error shadow-lg">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="stroke-current flex-shrink-0 h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span> {error} </span>
-                </div>
-              </div>
+    <div>
+      {error !== "" && (
+        <div className="alert alert-error shadow-lg">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current flex-shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span> {error} </span>
+          </div>
+        </div>
       )}
       <form onSubmit={onSubmit}>
         <div className="w-full">

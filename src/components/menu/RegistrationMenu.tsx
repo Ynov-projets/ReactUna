@@ -3,18 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
 import { Menu } from "./Menu";
 
-interface props {}
-
-export const RegistrationMenu: React.FC<props> = () => {
-    const navigate = useNavigate()
+export default function RegistrationMenu() {
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = React.useState({
     username: "",
     email: "",
     password: "",
-    passwordConfirm: ""
+    passwordConfirm: "",
   });
-
 
   const [error, setError] = React.useState("");
 
@@ -23,31 +20,28 @@ export const RegistrationMenu: React.FC<props> = () => {
 
     setCredentials({
       ...credentials,
-      [event.currentTarget.name]: value
+      [event.currentTarget.name]: value,
     });
-
   };
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-
     event.preventDefault();
 
     if (credentials.password !== credentials.passwordConfirm) {
-        setError("Les mots de passe ne correspondent pas");
-        console.log(error);
-        return;
+      setError("Les mots de passe ne correspondent pas");
+      console.log(error);
+      return;
     }
 
-    accountService.register({
+    accountService
+      .register({
         username: credentials.username,
         email: credentials.email,
-        password: credentials.password
-    })
-    .then(
-        res => {
-          navigate('/menu/login');
-        }
-      )
-      .catch(err => console.log(err))
+        password: credentials.password,
+      })
+      .then(() => {
+        navigate("/menu/login");
+      })
+      .catch((err) => console.log(err));
   };
   return (
       <Menu children={
@@ -122,6 +116,47 @@ export const RegistrationMenu: React.FC<props> = () => {
                   </button>
                 </div>
               </div>
+            </div>
+          )}
+
+          <div className="block mb-2 text-sm font-medium">
+            <label htmlFor="username">Nom d'utilisateur </label>
+            <input
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={onChange}
+            />
+          </div>
+          <div className="block mb-2 text-sm font-medium">
+            <label htmlFor="email">Email </label>
+            <input
+              type="text"
+              name="email"
+              value={credentials.email}
+              onChange={onChange}
+            />
+          </div>
+          <div className="block mb-2 text-sm font-medium">
+            <label htmlFor="password">Mot de passe </label>
+            <input
+              type="text"
+              name="password"
+              value={credentials.password}
+              onChange={onChange}
+            />
+          </div>
+          <div className="block mb-2 text-sm font-medium">
+            <label htmlFor="passwordConfirm">Confirmer le mot de passe </label>
+            <input
+              type="text"
+              name="passwordConfirm"
+              value={credentials.passwordConfirm}
+              onChange={onChange}
+            />
+          </div>
+          <div className="grblock mb-2 text-sm font-medium">
+            <button>S'inscrire</button>
           </div>
         </form>
       } />

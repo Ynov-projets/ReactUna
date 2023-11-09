@@ -2,8 +2,12 @@ import "../assets/styles/button.scss";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { Link } from "react-router-dom";
+import { LoginMenu } from "../components/menu/LoginMenu";
 import Modal from "../components/modal/index";
 
+import { RegistrationMenu } from "../components/menu/RegistrationMenu";
 
 interface Props {}
 
