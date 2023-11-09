@@ -11,7 +11,7 @@ export const LoginMenu: React.FC<Props> = () => {
   const { setUser } = useContext(UserContext);
   const [error, setError] = React.useState("");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = React.useState({
     email: "",

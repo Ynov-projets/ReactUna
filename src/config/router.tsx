@@ -1,20 +1,15 @@
 import { HomePage } from "../pages";
 import { LoginMenu } from "../components/menu/LoginMenu";
 //import { GamePage } from "../pages/";
-import { MenuLayout } from "../components/layout/MenuLayout";
-import { ParameterMenu } from "../components/menu/ParameterMenu";
 import { RegistrationMenu } from "../components/menu/RegistrationMenu";
 import { createBrowserRouter } from "react-router-dom";
+import { ParameterPage } from "../pages/parameter";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
   },
-  {
-    path: "/menu",
-    element: <MenuLayout />,
-    children: [
       {
         path: "login",
         element: <LoginMenu />,
@@ -25,12 +20,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "parameter",
-        element: <ParameterMenu />,
+        element: <ParameterPage />,
       },
       // {
       //   path: "lobby",
       //   element: <GamePage/>,
       // },
-    ],
-  },
 ]);

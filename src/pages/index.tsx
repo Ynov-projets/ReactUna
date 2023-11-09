@@ -1,4 +1,4 @@
-// import "../../assets/styles/button.scss";
+import "../assets/styles/button.scss";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
