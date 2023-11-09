@@ -10,7 +10,7 @@ export const HomePage: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
   return (
     <>
-      <div className="w-full h-screen bg-cyan-800">
+      <div className="w-full h-screen bg-background">
         <div className="absolute top-[10px] right-[10px]">
           <button
             className="mx-2 px-3 py-2 uppercase border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-cyan-600"

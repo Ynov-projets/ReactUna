@@ -5,7 +5,7 @@ import accountService from "../../_services/account.service";
 interface props {}
 
 export const RegistrationMenu: React.FC<props> = () => {
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
   const [credentials, setCredentials] = React.useState({
     username: "",
