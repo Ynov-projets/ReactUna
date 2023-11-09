@@ -2,7 +2,10 @@
 
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+import { LoginMenu } from "../components/menu/LoginMenu";
 import Modal from "../components/modal/index";
+import { RegistrationMenu } from "../components/menu/RegistrationMenu";
 
 interface Props {}
 
@@ -12,18 +15,22 @@ export const HomePage: React.FC<Props> = () => {
     <>
       <div className="w-full h-screen bg-background">
         <div className="absolute top-[10px] right-[10px]">
-          <button
-            className="mx-2 px-3 py-2 uppercase border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-cyan-600"
-            onClick={() => {}}
-          >
-            connexion
-          </button>
-          <button
-            className="px-3 py-2 uppercase border-solid border-[1px] border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-cyan-600"
-            onClick={() => {}}
-          >
-            inscription
-          </button>
+          <Link to={"/menu/login"}>
+            <button
+              className="mx-2 px-3 py-2 uppercase border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-cyan-600"
+              onClick={() => {}}
+            >
+              connexion
+            </button>
+          </Link>
+          <Link to={"/menu/register"}>
+            <button
+              className="px-3 py-2 uppercase border-solid border-[1px] border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-cyan-600"
+              onClick={() => {}}
+            >
+              inscription
+            </button>
+          </Link>
         </div>
         <div className="flex flex-col items-center">
           <img
