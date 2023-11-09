@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
 
 
-interface Props { } 
+interface Props {}
 
 export const LoginMenu: React.FC<Props> = () => {
   const { setUser } = useContext(UserContext);

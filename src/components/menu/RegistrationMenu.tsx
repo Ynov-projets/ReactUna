@@ -1,8 +1,5 @@
+// import styles from "./registrationMenu.module.scss";
 
-interface props { }
+interface props {}
 
-export const RegistrationMenu: React.FC<props> = () => (
-  <div>
-
-  </div>
-);
+export const RegistrationMenu: React.FC<props> = () => <div></div>;
