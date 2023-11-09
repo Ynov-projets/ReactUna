@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../../assets/images/BigLogo.png";
+import logo from "../../assets/images/BigLogo.png"
 
 interface Props {}
 export const MenuLayout: React.FC<Props> = () => (
