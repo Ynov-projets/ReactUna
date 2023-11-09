@@ -1,7 +1,6 @@
 import Axios from './caller.service';
 
 const login = (credentials: object) => {
-
     return Axios.post('/users/auth/login/', credentials)
 };
 
