@@ -41,7 +41,8 @@ export default function LoginMenu() {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
+    <Menu children={ 
+      <div>
       {error !== "" && (
         <div className="alert alert-error shadow-lg">
           <div>
@@ -110,4 +111,5 @@ export default function LoginMenu() {
     </form>
 
   </div>
-  )};
+    } />
+  )}
