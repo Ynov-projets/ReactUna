@@ -99,7 +99,7 @@ export const LoginMenu: React.FC<Props> = () => {
               <button
                 className="font-font w-[200px] h-[50px] bg-orange text-xl m-5 cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
                 >
-                Se connecter
+                <Link to={"/"}>Se connecter</Link>
               </button>
             </div>
             <div className="grblock mb-2 text-sm text-center">

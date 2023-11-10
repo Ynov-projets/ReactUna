@@ -111,7 +111,7 @@ export const RegistrationMenu: React.FC<props> = () => {
                   <button
                     className="font-font w-[200px] h-[50px] bg-orange text-xl cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
                   >
-                  S'inscrire
+                  <Link to={"/"}>S'inscrire</Link>
                   </button>
                 </div>
                 <div className="grblock mb-2 text-sm text-center">
