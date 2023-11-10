@@ -1,4 +1,4 @@
-type messagePayload = {
+export type messagePayload = {
     content: {
         text: string;
         room: string;
@@ -7,7 +7,7 @@ type messagePayload = {
     clientId: string;
 };
 
-type RoomPayload = {
+export type RoomPayload = {
     msg: string;
     room: string;
     participants: string[];
@@ -15,18 +15,18 @@ type RoomPayload = {
     playerCards: Record<string, Card[]>; // New property for player cards
 };
 
-type Card = {
+export type Card = {
     id: number;
     color: "red" | "blue" | "green" | "yellow";
     value: string;
     effect: string;
 };
 
-type cardsPayload = {
+export type cardsPayload = {
     cards: Card[],
 };
 
-type playCardPayload = {
+export type playCardPayload = {
     card: Card,
     playerId: string,
 }

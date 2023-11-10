@@ -1,9 +1,16 @@
 import { RouterProvider } from "react-router-dom";
+import UserProvider from "./contexts/auth/AuthContext";
+import WebSocketsProvider from "./contexts/rooms/WebSocketsContext";
 import { router } from "./config/router";
+
 function App() {
   return (
     <div>
-      <RouterProvider router={router} />
+      <WebSocketsProvider>
+        <UserProvider>
+          <RouterProvider router={router} />
+        </UserProvider>
+      </WebSocketsProvider>
     </div>
   );
 }
