@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/auth/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
 
 
@@ -14,8 +14,8 @@ export const LoginMenu: React.FC<Props> = () => {
   let navigate = useNavigate();
 
   const [credentials, setCredentials] = React.useState({
-    email: "test@test.com",
-    password: "azertyuiop",
+    email: "",
+    password: "",
   });
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,32 +65,47 @@ export const LoginMenu: React.FC<Props> = () => {
               </div>
       )}
       <form onSubmit={onSubmit}>
-        <div className="w-full md:mt-0 sm:max-w-md xl:p-0 flex flex-col items-center">
-          <div className="p-6 space-y-6 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
+        <div className="w-full">
+          <div className="w-full p-6 space-y-6 md:space-y-6 sm:p-8">
+            <h1 className="font-font italic bold uppercase text-orange text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
               Connexion
             </h1>
 
             <div className="block mb-2 text-sm">
-              <label htmlFor="email">Email </label>
-              <input
+              <label className="pl-1 font-font" htmlFor="email">Email </label>
+              <br></br>
+              <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                 type="text"
+                placeholder="Identifiant..."
                 name="email"
                 value={credentials.email}
                 onChange={onChange}
               />
             </div>
             <div className="block mb-2 text-sm">
-              <label htmlFor="password">Mot de passe </label>
-              <input
+              <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
+              <br></br>
+              <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                 type="text"
+                placeholder="Mot de passe..."
                 name="password"
                 value={credentials.password}
                 onChange={onChange}
               />
             </div>
-            <div className="grblock mb-2 text-sm ">
-              <button className="bg-gradient-to-b from-yellow-500 to-amber-200 p-2">Se connecter</button>
+            <div className="grblock mb-2 text-sm text-center">
+              <button
+                className="font-font w-[200px] h-[50px] bg-orange text-xl m-5 cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
+                >
+                Se connecter
+              </button>
+            </div>
+            <div className="grblock mb-2 text-sm text-center">
+              <button 
+                className="text-orange font-font text-center p-2"
+              >
+                <Link to={"/menu/registration"}>Je n'ai pas de compte</Link>
+              </button>
             </div>
           </div>
         </div>
