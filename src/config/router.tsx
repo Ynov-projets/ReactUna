@@ -4,7 +4,7 @@ import { MenuLayout } from "../components/layout/MenuLayout";
 import { ParameterMenu } from "../components/menu/ParameterMenu";
 import  RegistrationMenu  from "../components/menu/RegistrationMenu";
 import { createBrowserRouter } from "react-router-dom";
-import JoinGameMenu from "../components/menu/JoinGameMenu";
+import { JoinGamePage } from "../pages/joinGame";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "join_game",
-        element: <JoinGameMenu />,
+        element: <JoinGamePage />,
       },
       // {
       //   path: "lobby",
