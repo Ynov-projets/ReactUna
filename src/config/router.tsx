@@ -4,7 +4,7 @@ import  RegistrationMenu  from "../components/menu/RegistrationMenu";
 import { createBrowserRouter } from "react-router-dom";
 import { ParameterPage } from "../pages/parameter";
 import { LobbyPage } from "../pages/lobby";
-import JoinGameMenu from "../components/menu/JoinGameMenu";
+import { JoinGamePage } from "../pages/joinGame";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "join_game",
-        element: <JoinGameMenu />,
+        element: <JoinGamePage />,
       },
       {
         path: "lobby",
