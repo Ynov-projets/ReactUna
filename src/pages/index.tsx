@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/modal/index";
 
+
 interface Props {}
 
 export const HomePage: React.FC<Props> = () => {
@@ -43,7 +44,7 @@ export const HomePage: React.FC<Props> = () => {
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
           >
-            parametres
+            <Link to={"/parameter"}>Parametre</Link>
           </button>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"

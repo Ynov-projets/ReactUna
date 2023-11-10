@@ -12,7 +12,7 @@ export const ParameterMenu: React.FC<Props> = () => (
         MODE
         <div className="flex justify-center gap-[30px] my-[10px] ">
           <button className="button bg-orange">
-            <Link to={"/"}>NORMAL</Link>
+            <Link to={"/login"}>NORMAL</Link>
           </button>
           <button className="button bg-orange">
             <Link to={"/"}>REVERSE</Link>

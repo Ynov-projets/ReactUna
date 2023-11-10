@@ -4,6 +4,7 @@ import { LoginMenu } from "../components/menu/LoginMenu";
 import { RegistrationMenu } from "../components/menu/RegistrationMenu";
 import { createBrowserRouter } from "react-router-dom";
 import { ParameterPage } from "../pages/parameter";
+import { LobbyPage } from "../pages/lobby";
 
 export const router = createBrowserRouter([
   {
@@ -22,8 +23,8 @@ export const router = createBrowserRouter([
         path: "parameter",
         element: <ParameterPage />,
       },
-      // {
-      //   path: "lobby",
-      //   element: <GamePage/>,
-      // },
+      {
+        path: "lobby",
+        element: <LobbyPage/>,
+      },
 ]);
