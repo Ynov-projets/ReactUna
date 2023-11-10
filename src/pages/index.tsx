@@ -44,7 +44,7 @@ export const HomePage: React.FC<Props> = () => {
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
           >
-            <Link to={"/parameter"}>Parametre</Link>
+            <Link to={"/parameter"}>Parametres</Link>
           </button>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
