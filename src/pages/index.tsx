@@ -1,16 +1,15 @@
 // import "../../assets/styles/button.scss";
 
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-import { LoginMenu } from "../components/menu/LoginMenu";
 import Modal from "../components/modal/index";
-import { RegistrationMenu } from "../components/menu/RegistrationMenu";
+
 
 interface Props {}
 
 export const HomePage: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
+  // setIsOpen(false);
   return (
     <>
       <div className="w-full h-screen bg-background">
@@ -23,7 +22,7 @@ export const HomePage: React.FC<Props> = () => {
               connexion
             </button>
           </Link>
-          <Link to={"/menu/register"}>
+          <Link to={"/menu/registration"}>
             <button
               className="px-3 py-2 uppercase border-solid border-[1px] border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-cyan-600"
               onClick={() => {}}
@@ -40,12 +39,10 @@ export const HomePage: React.FC<Props> = () => {
           />
         </div>
         <div className="flex flex-col items-center">
-          <button
-            className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
-            onClick={() => setIsOpen(true)}
-          >
+          <Link to={"/menu/join_game"}
+            className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
             jouer
-          </button>
+          </Link>
           <button
             className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
