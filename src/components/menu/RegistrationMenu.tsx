@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
+import { Menu } from "./Menu";
 
 interface props {}
 
@@ -48,7 +49,8 @@ export const RegistrationMenu: React.FC<props> = () => {
       )
       .catch(err => console.log(err))
   };
-    return (
+  return (
+      <Menu children={
         <form onSubmit={onSubmit}>
           <div className="w-full">
               <div className="w-full space-y-6 md:space-y-6">
@@ -122,5 +124,6 @@ export const RegistrationMenu: React.FC<props> = () => {
               </div>
           </div>
         </form>
+      } />
       );
 };
