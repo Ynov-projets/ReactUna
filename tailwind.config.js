@@ -35,7 +35,7 @@ export default {
       text: '#2B2B2B',
     },
     fontFamily: {
-      font: ['Josefin Sans', 'italic']
+      font: ['Josefin Sans', 'sans-serif']
     }
   },
   plugins: [],

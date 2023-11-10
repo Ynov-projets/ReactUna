@@ -72,9 +72,9 @@ export const LoginMenu: React.FC<Props> = () => {
             </h1>
 
             <div className="block mb-2 text-sm">
-              <label className="pl-1" htmlFor="email">Email </label>
+              <label className="pl-1 font-font" htmlFor="email">Email </label>
               <br></br>
-              <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+              <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                 type="text"
                 placeholder="Identifiant..."
                 name="email"
@@ -83,9 +83,9 @@ export const LoginMenu: React.FC<Props> = () => {
               />
             </div>
             <div className="block mb-2 text-sm">
-              <label className="pl-1" htmlFor="password">Mot de passe </label>
+              <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
               <br></br>
-              <input className=" placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+              <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                 type="text"
                 placeholder="Mot de passe..."
                 name="password"
@@ -95,14 +95,14 @@ export const LoginMenu: React.FC<Props> = () => {
             </div>
             <div className="grblock mb-2 text-sm text-center">
               <button
-                className="w-[200px] h-[50px] bg-orange text-xl m-5 cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
+                className="font-font w-[200px] h-[50px] bg-orange text-xl m-5 cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
                 >
                 Se connecter
               </button>
             </div>
             <div className="grblock mb-2 text-sm text-center">
               <button 
-                className="text-orange text-center p-2"
+                className="text-orange font-font text-center p-2"
               >
                 <Link to={"/menu/registration"}>Je n'ai pas de compte</Link>
               </button>

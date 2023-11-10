@@ -66,9 +66,9 @@ export const RegistrationMenu: React.FC<props> = () => {
                 }
     
                 <div className="block mb-2 text-sm">
-                  <label className="pl-1" htmlFor="username">Nom d'utilisateur </label>
+                  <label className="pl-1 font-font" htmlFor="username">Nom d'utilisateur </label>
                   <br></br>
-                  <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+                  <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                   type="text" 
                   placeholder="Pseudo..."
                   name="username"  
@@ -77,9 +77,9 @@ export const RegistrationMenu: React.FC<props> = () => {
                 </div>
 
                 <div className="block mb-2 text-sm">
-                    <label className="pl-1" htmlFor="email">Email </label>
+                    <label className="pl-1 font-font" htmlFor="email">Email </label>
                     <br></br>
-                    <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                     type="text" 
                     placeholder="Email..."
                     name="email"  
@@ -87,9 +87,9 @@ export const RegistrationMenu: React.FC<props> = () => {
                 </div>
 
                 <div className="block mb-2 text-sm">
-                    <label className="pl-1" htmlFor="password">Mot de passe </label>
+                    <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
                     <br></br>
-                    <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                     type="text" 
                     placeholder="Mot de passe..."
                     name="password" 
@@ -107,14 +107,14 @@ export const RegistrationMenu: React.FC<props> = () => {
                 </div>
                 <div className="grblock mb-2 text-sm text-center">
                   <button
-                    className="w-[200px] h-[50px] bg-orange text-xl cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
+                    className="font-font w-[200px] h-[50px] bg-orange text-xl cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
                   >
                   S'inscrire
                   </button>
                 </div>
                 <div className="grblock mb-2 text-sm text-center">
                   <button 
-                    className="text-orange text-center p-2"
+                    className="text-orange font-font text-center p-2"
                   >
                     <Link to={"/menu/login"}>J'ai déjà un compte</Link>
                   </button>

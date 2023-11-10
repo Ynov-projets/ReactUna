@@ -9,7 +9,7 @@ export const MainLayout: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
   return (
     <>
-      <div className="w-full h-screen bg-background">
+      <div className="w-full h-screen bg-cyan-800">
         <div className="absolute top-[10px] right-[10px]">
           <Link to={"/menu/login"} className="mx-2 px-3 py-2 
                             uppercase 
@@ -43,6 +43,7 @@ export const MainLayout: React.FC<Props> = () => {
           </button>
         </div>
         <Modal show={open} setShow={() => setIsOpen(false)}>
+          <h1>ihbevivebeibi</h1>
         </Modal>
       </div>
     </>
