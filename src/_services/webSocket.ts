@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
+
 import { WebsocketContext } from "../contexts/rooms/WebSocketsContext";
-
-
 
 const [error, setError] = useState("");
 const [turn, setTurn] = useState("");
