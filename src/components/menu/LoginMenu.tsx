@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
+import { Menu } from "./Menu";
 
 
 interface Props {}
@@ -11,7 +12,7 @@ export const LoginMenu: React.FC<Props> = () => {
   const { setUser } = useContext(UserContext);
   const [error, setError] = React.useState("");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = React.useState({
     email: "",
@@ -43,7 +44,8 @@ export const LoginMenu: React.FC<Props> = () => {
       .catch((err) => console.log(err));
   };
   return (
-  <div>
+    <Menu children={
+      <div>
      {error !== "" && (
               <div className="alert alert-error shadow-lg">
                 <div>
@@ -112,4 +114,5 @@ export const LoginMenu: React.FC<Props> = () => {
     </form>
 
   </div>
+    } />
   )};

@@ -1,8 +1,9 @@
-// import "../../assets/styles/button.scss";
+import "../assets/styles/button.scss";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/modal/index";
+
 
 interface Props {}
 
@@ -16,13 +17,13 @@ export const HomePage: React.FC<Props> = () => {
             className="font-font italic font-black mx-2 px-3 py-2 border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-backgroundClear"
             
           >
-            <Link to={"/menu/login"}>Connexion</Link>
+            <Link to={"/login"}>Connexion</Link>
           </button>
           <button
             className="font-font italic font-black px-3 py-2 border-solid border-[1px] rounded-lg border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-backgroundClear"
             onClick={() => {}}
           >
-            <Link to={"/menu/registration"}>Inscription</Link>
+            <Link to={"/registration"}>Inscription</Link>
           </button>
         </div>
         <div className="flex flex-col items-center">
@@ -43,7 +44,7 @@ export const HomePage: React.FC<Props> = () => {
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
           >
-            parametres
+            <Link to={"/parameter"}>Parametre</Link>
           </button>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
