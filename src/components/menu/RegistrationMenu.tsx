@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
-import { Menu } from "./Menu";
+
+interface props {}
 
 export default function RegistrationMenu() {
   const navigate = useNavigate();
@@ -43,12 +44,11 @@ export default function RegistrationMenu() {
       })
       .catch((err) => console.log(err));
   };
-  return (
-      <Menu children={
+    return (
         <form onSubmit={onSubmit}>
-          <div className="w-full">
-              <div className="w-full space-y-6 md:space-y-6">
-                <h1 className="font-font italic bold uppercase text-orange text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+              <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     S'inscrire
                 </h1>
             
@@ -61,104 +61,27 @@ export default function RegistrationMenu() {
                 </div>
                 }
     
-                <div className="block mb-2 text-sm">
-                  <label className="pl-1 font-font" htmlFor="username">Nom d'utilisateur </label>
-                  <br></br>
-                  <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                  type="text" 
-                  placeholder="Pseudo..."
-                  name="username"  
-                  value={credentials.username} 
-                  onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="username">Nom d'utilisateur </label>
+                    <input type="text" name="username"  value={credentials.username} onChange={onChange}/>
                 </div>
-
-                <div className="block mb-2 text-sm">
-                    <label className="pl-1 font-font" htmlFor="email">Email </label>
-                    <br></br>
-                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
-                    placeholder="Email..."
-                    name="email"  
-                    value={credentials.email} onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="email">Email </label>
+                    <input type="text" name="email"  value={credentials.email} onChange={onChange}/>
                 </div>
-
-                <div className="block mb-2 text-sm">
-                    <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
-                    <br></br>
-                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
-                    placeholder="Mot de passe..."
-                    name="password" 
-                    value={credentials.password} onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="password">Mot de passe </label>
+                    <input type="text" name="password" value={credentials.password} onChange={onChange}/>
                 </div>
-
-                <div className="block mb-2 text-sm">
-                    <label className="pl-1" htmlFor="passwordConfirm">Confirmer le mot de passe </label>
-                    <br></br>
-                    <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
-                    placeholder="Même mot de passe..."
-                    name="passwordConfirm" 
-                    value={credentials.passwordConfirm} onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="passwordConfirm">Confirmer le mot de passe </label>
+                    <input type="text" name="passwordConfirm" value={credentials.passwordConfirm} onChange={onChange}/>
                 </div>
-                <div className="grblock mb-2 text-sm text-center">
-                  <button
-                    className="font-font w-[200px] h-[50px] bg-orange text-xl cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
-                  >
-                  S'inscrire
-                  </button>
-                </div>
-                <div className="grblock mb-2 text-sm text-center">
-                  <button 
-                    className="text-orange font-font text-center p-2"
-                  >
-                    <Link to={"/menu/login"}>J'ai déjà un compte</Link>
-                  </button>
+                <div className="grblock mb-2 text-sm font-medium">
+                    <button>S'inscrire</button>
                 </div>
               </div>
-            </div>
-          )}
-
-          <div className="block mb-2 text-sm font-medium">
-            <label htmlFor="username">Nom d'utilisateur </label>
-            <input
-              type="text"
-              name="username"
-              value={credentials.username}
-              onChange={onChange}
-            />
-          </div>
-          <div className="block mb-2 text-sm font-medium">
-            <label htmlFor="email">Email </label>
-            <input
-              type="text"
-              name="email"
-              value={credentials.email}
-              onChange={onChange}
-            />
-          </div>
-          <div className="block mb-2 text-sm font-medium">
-            <label htmlFor="password">Mot de passe </label>
-            <input
-              type="text"
-              name="password"
-              value={credentials.password}
-              onChange={onChange}
-            />
-          </div>
-          <div className="block mb-2 text-sm font-medium">
-            <label htmlFor="passwordConfirm">Confirmer le mot de passe </label>
-            <input
-              type="text"
-              name="passwordConfirm"
-              value={credentials.passwordConfirm}
-              onChange={onChange}
-            />
-          </div>
-          <div className="grblock mb-2 text-sm font-medium">
-            <button>S'inscrire</button>
           </div>
         </form>
-      } />
       );
 };

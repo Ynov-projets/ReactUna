@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/modal/index";
 
+
 interface Props {}
 
 export const HomePage: React.FC<Props> = () => {
@@ -12,7 +13,7 @@ export const HomePage: React.FC<Props> = () => {
     <>
       <div className="w-full h-screen bg-background">
         <div className="absolute top-[10px] right-[10px]">
-          <Link to={"/menu/login"}>
+          <Link to={"/login"}>
             <button
               className="mx-2 px-3 py-2 uppercase border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-cyan-600"
               onClick={() => {}}
@@ -20,7 +21,7 @@ export const HomePage: React.FC<Props> = () => {
               connexion
             </button>
           </Link>
-          <Link to={"/menu/register"}>
+          <Link to={"/registration"}>
             <button
               className="px-3 py-2 uppercase border-solid border-[1px] border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-cyan-600"
               onClick={() => {}}
@@ -41,6 +42,9 @@ export const HomePage: React.FC<Props> = () => {
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
             jouer
           
+            className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
+            jouer
+          </Link>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}

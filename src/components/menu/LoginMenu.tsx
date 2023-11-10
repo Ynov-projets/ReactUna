@@ -3,7 +3,6 @@ import { UserContext } from "../../contexts/auth/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { Menu } from "./Menu";
 
 export default function LoginMenu() {
@@ -111,5 +110,4 @@ export default function LoginMenu() {
     </form>
 
   </div>
-    } />
   )};
