@@ -1,20 +1,19 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import accountService from "../../_services/account.service";
-import { Menu } from "./Menu";
+import { Link } from "react-router-dom";
 
 interface props {}
 
-export const RegistrationMenu: React.FC<props> = () => {
-    const navigate = useNavigate()
+export default function RegistrationMenu() {
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = React.useState({
     username: "",
     email: "",
     password: "",
-    passwordConfirm: ""
+    passwordConfirm: "",
   });
-
 
   const [error, setError] = React.useState("");
 
@@ -23,38 +22,34 @@ export const RegistrationMenu: React.FC<props> = () => {
 
     setCredentials({
       ...credentials,
-      [event.currentTarget.name]: value
+      [event.currentTarget.name]: value,
     });
-
   };
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-
     event.preventDefault();
 
     if (credentials.password !== credentials.passwordConfirm) {
-        setError("Les mots de passe ne correspondent pas");
-        console.log(error);
-        return;
+      setError("Les mots de passe ne correspondent pas");
+      console.log(error);
+      return;
     }
 
-    accountService.register({
+    accountService
+      .register({
         username: credentials.username,
         email: credentials.email,
-        password: credentials.password
-    })
-    .then(
-        res => {
-          navigate('/login');
-        }
-      )
-      .catch(err => console.log(err))
+        password: credentials.password,
+      })
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
   };
-  return (
-      <Menu children={
+    return (
         <form onSubmit={onSubmit}>
-          <div className="w-full">
-              <div className="w-full space-y-6 md:space-y-6">
-                <h1 className="font-font italic bold uppercase text-orange text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+              <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     S'inscrire
                 </h1>
             
@@ -67,35 +62,17 @@ export const RegistrationMenu: React.FC<props> = () => {
                 </div>
                 }
     
-                <div className="block mb-2 text-sm">
-                  <label className="pl-1 font-font" htmlFor="username">Nom d'utilisateur </label>
-                  <br></br>
-                  <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                  type="text" 
-                  placeholder="Pseudo..."
-                  name="username"  
-                  value={credentials.username} 
-                  onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="username">Nom d'utilisateur </label>
+                    <input type="text" name="username"  value={credentials.username} onChange={onChange}/>
                 </div>
-
-                <div className="block mb-2 text-sm">
-                    <label className="pl-1 font-font" htmlFor="email">Email </label>
-                    <br></br>
-                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
-                    placeholder="Email..."
-                    name="email"  
-                    value={credentials.email} onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="email">Email </label>
+                    <input type="text" name="email"  value={credentials.email} onChange={onChange}/>
                 </div>
-
-                <div className="block mb-2 text-sm">
-                    <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
-                    <br></br>
-                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
-                    placeholder="Mot de passe..."
-                    name="password" 
-                    value={credentials.password} onChange={onChange}/>
+                <div className="block mb-2 text-sm font-medium">
+                    <label htmlFor="password">Mot de passe </label>
+                    <input type="text" name="password" value={credentials.password} onChange={onChange}/>
                 </div>
 
                 <div className="block mb-2 text-sm">
@@ -106,13 +83,10 @@ export const RegistrationMenu: React.FC<props> = () => {
                     placeholder="Même mot de passe..."
                     name="passwordConfirm" 
                     value={credentials.passwordConfirm} onChange={onChange}/>
-                </div>
-                <div className="grblock mb-2 text-sm text-center">
-                  <button
-                    className="font-font w-[200px] h-[50px] bg-orange text-xl cursor-pointer text-white rounded-3xl hover:bg-gradient-to-r"
-                  >
-                  S'inscrire
-                  </button>
+                  <div className="block mb-2 text-sm font-medium">
+                      <label htmlFor="passwordConfirm">Confirmer le mot de passe </label>
+                      <input type="text" name="passwordConfirm" value={credentials.passwordConfirm} onChange={onChange}/>
+                  </div>
                 </div>
                 <div className="grblock mb-2 text-sm text-center">
                   <button 
@@ -124,6 +98,5 @@ export const RegistrationMenu: React.FC<props> = () => {
               </div>
           </div>
         </form>
-      } />
       );
 };

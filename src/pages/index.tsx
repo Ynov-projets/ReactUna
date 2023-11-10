@@ -1,5 +1,4 @@
 import "../assets/styles/button.scss";
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/modal/index";
@@ -9,22 +8,27 @@ interface Props {}
 
 export const HomePage: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
+  // setIsOpen(false);
   return (
     <>
       <div className="w-full h-screen bg-background">
         <div className="absolute top-[10px] right-[10px]">
-          <button
-            className="font-font italic font-black mx-2 px-3 py-2 border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-backgroundClear"
-            
-          >
-            <Link to={"/login"}>Connexion</Link>
-          </button>
-          <button
-            className="font-font italic font-black px-3 py-2 border-solid border-[1px] rounded-lg border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-backgroundClear"
-            onClick={() => {}}
-          >
-            <Link to={"/registration"}>Inscription</Link>
-          </button>
+          <Link to={"/login"}>
+            <button
+              className="mx-2 px-3 py-2 uppercase border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-cyan-600"
+              onClick={() => {}}
+            >
+              connexion
+            </button>
+          </Link>
+          <Link to={"/registration"}>
+            <button
+              className="px-3 py-2 uppercase border-solid border-[1px] border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-cyan-600"
+              onClick={() => {}}
+            >
+              inscription
+            </button>
+          </Link>
         </div>
         <div className="flex flex-col items-center">
           <img
@@ -34,12 +38,13 @@ export const HomePage: React.FC<Props> = () => {
           />
         </div>
         <div className="flex flex-col items-center">
-          <button
-            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
-            onClick={() => setIsOpen(true)}
-          >
+          <Link to={"/menu/join_game"}
+            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
             jouer
-          </button>
+          
+            className=" w-[500px] h-[100px] bg-gradient-to-b from-yellow-500 to-amber-200 uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
+            jouer
+          </Link>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}

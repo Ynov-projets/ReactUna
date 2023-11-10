@@ -1,10 +1,10 @@
 import { HomePage } from "../pages";
-import { LoginMenu } from "../components/menu/LoginMenu";
-//import { GamePage } from "../pages/";
-import { RegistrationMenu } from "../components/menu/RegistrationMenu";
+import  LoginMenu  from "../components/menu/LoginMenu";
+import  RegistrationMenu  from "../components/menu/RegistrationMenu";
 import { createBrowserRouter } from "react-router-dom";
 import { ParameterPage } from "../pages/parameter";
 import { LobbyPage } from "../pages/lobby";
+import { JoinGamePage } from "../pages/joinGame";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +24,12 @@ export const router = createBrowserRouter([
         element: <ParameterPage />,
       },
       {
+        path: "join_game",
+        element: <JoinGamePage />,
+      },
+      {
         path: "lobby",
         element: <LobbyPage/>,
       },
+
 ]);
