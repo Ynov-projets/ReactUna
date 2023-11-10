@@ -44,7 +44,7 @@ export const RegistrationMenu: React.FC<props> = () => {
     })
     .then(
         res => {
-          navigate('/menu/login');
+          navigate('/login');
         }
       )
       .catch(err => console.log(err))
@@ -99,9 +99,9 @@ export const RegistrationMenu: React.FC<props> = () => {
                 </div>
 
                 <div className="block mb-2 text-sm">
-                    <label className="pl-1" htmlFor="passwordConfirm">Confirmer le mot de passe </label>
+                    <label className="pl-1 font-font" htmlFor="passwordConfirm">Confirmer le mot de passe </label>
                     <br></br>
-                    <input className="placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
+                    <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
                     type="text" 
                     placeholder="Même mot de passe..."
                     name="passwordConfirm" 
