@@ -7,7 +7,7 @@ interface Props {
 
 const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
   const { children, show, setShow } = props;
-
+  
   return (
     <>
     <div className="w-full absolute top-[200px] mx-auto flex flex-col items-center">
