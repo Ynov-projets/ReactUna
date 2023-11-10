@@ -38,16 +38,19 @@ export const HomePage: React.FC<Props> = () => {
           />
         </div>
         <div className="flex flex-col items-center">
-          <Link to={"/menu/join_game"}
-            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
-            jouer
+          <Link to={"/join_game"}>
+            <button className="font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r">
+              jouer
+            </button>
+            
           </Link>
-          <button
+          
+          <Link to={"/parameter"}>
+            <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
-          >
-            <Link to={"/parameter"}>Parametre</Link>
-          </button>
+            >Parametres</button>  
+          </Link>
           <button
             className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
