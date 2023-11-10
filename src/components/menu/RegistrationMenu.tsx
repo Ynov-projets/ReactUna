@@ -118,7 +118,7 @@ export const RegistrationMenu: React.FC<props> = () => {
                   <button 
                     className="text-orange font-font text-center p-2"
                   >
-                    <Link to={"/menu/login"}>J'ai déjà un compte</Link>
+                    <Link to={"/login"}>J'ai déjà un compte</Link>
                   </button>
                 </div>
               </div>

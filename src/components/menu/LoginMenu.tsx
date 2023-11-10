@@ -106,7 +106,7 @@ export const LoginMenu: React.FC<Props> = () => {
               <button 
                 className="text-orange font-font text-center p-2"
               >
-                <Link to={"/menu/registration"}>Je n'ai pas de compte</Link>
+                <Link to={"/registration"}>Je n'ai pas de compte</Link>
               </button>
             </div>
           </div>
