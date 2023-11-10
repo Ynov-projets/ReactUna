@@ -6,7 +6,10 @@ export default {
     colors: {
       background: '#2C7784',
       backgroundClear: '#2c779a',
-      orange: '#FCB62D',
+      orange: {
+        DEFAULT: '#FCB62D',
+        clear: '#FDD27D',
+      },
       white: '#FFFF',
       red: {
         DEFAULT: '#FF3030',

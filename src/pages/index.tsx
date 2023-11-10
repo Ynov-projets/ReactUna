@@ -13,13 +13,13 @@ export const HomePage: React.FC<Props> = () => {
       <div className="w-full h-screen bg-background">
         <div className="absolute top-[10px] right-[10px]">
           <button
-            className="font-font mx-2 px-3 py-2 border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-backgroundClear"
+            className="font-font italic font-black mx-2 px-3 py-2 border-none bg-transparent text-white text-base ml-2 hover:shadow-lg hover:bg-backgroundClear"
             
           >
             <Link to={"/menu/login"}>Connexion</Link>
           </button>
           <button
-            className="font-font px-3 py-2 border-solid border-[1px] rounded-lg border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-backgroundClear"
+            className="font-font italic font-black px-3 py-2 border-solid border-[1px] rounded-lg border-whitebg-transparent text-white text-base ml-2 hover:shadow-xl hover:bg-backgroundClear"
             onClick={() => {}}
           >
             <Link to={"/menu/registration"}>Inscription</Link>
@@ -34,19 +34,19 @@ export const HomePage: React.FC<Props> = () => {
         </div>
         <div className="flex flex-col items-center">
           <button
-            className=" font-font w-[500px] h-[100px] bg-gradient-to-b from-orange to-white uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
+            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => setIsOpen(true)}
           >
             jouer
           </button>
           <button
-            className=" font-font w-[500px] h-[100px] bg-gradient-to-b from-orange to-white uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
+            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
           >
             parametres
           </button>
           <button
-            className=" font-font w-[500px] h-[100px] bg-gradient-to-b from-orange to-white uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
+            className=" font-font italic font-black w-[500px] h-[100px] bg-gradient-to-b from-orange to-orange-clear uppercase text-3xl m-5 cursor-pointer text-white rounded-lg hover:bg-gradient-to-r"
             onClick={() => {}}
           >
             quitter
