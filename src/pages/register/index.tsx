@@ -1,5 +1,5 @@
 import React from "react";
-import { RegistrationMenu } from "../../components/menu/RegistrationMenu";
+import RegistrationMenu  from "../../components/menu/RegistrationMenu";
 
 
 interface Props {}
