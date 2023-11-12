@@ -9,6 +9,7 @@ const useWebSockets = () => {
 
   const onCreateRoom = () => {
     socket.emit("createRoom");
+    console.log("bonjour room créer");
   };
 
   const onJoinRoom = () => {

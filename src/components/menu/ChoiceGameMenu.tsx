@@ -41,6 +41,12 @@ export default function ChoiceGameMenu() {
       console.log(room);
       context.setParticipants(room.participants);
     });
+
+    socket.on("onRoomJoinFailed", (room: RoomPayload) => {
+      console.log("roomJoinFailed event received");
+      console.log(room);
+      context.setError(room.msg);
+    });
   }, [context]);
 
   return (
@@ -70,6 +76,8 @@ export default function ChoiceGameMenu() {
             <input
               type="text"
               placeholder="lien de la room"
+              className="text-black"
+              value={context.roomValue}
               onChange={(e) => context.setRoomValue(e.target.value)}
             />
             <button>Join room</button>
