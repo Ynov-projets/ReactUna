@@ -2,6 +2,7 @@ import "../assets/styles/button.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/modal/index";
+import accountService from "../_services/account.service";
 
 
 interface Props {}
@@ -9,9 +10,12 @@ interface Props {}
 export const HomePage: React.FC<Props> = () => {
   const [open, setIsOpen] = useState(false);
   // setIsOpen(false);
+  
+  accountService.isLoggedIn()
   return (
     <>
       <div className="w-full h-screen bg-background">
+        {accountService.isLoggedIn() ? (
         <div className="absolute top-[10px] right-[10px]">
           <Link to={"/login"}>
             <button
@@ -30,6 +34,12 @@ export const HomePage: React.FC<Props> = () => {
             </button>
           </Link>
         </div>
+        ) : (
+            <div className="flex items-center gap-[35px] absolute top-[10px] right-[10px] uppercase text-white text-[20px] mr-[50px] hover:shadow-xl">
+              <div className="w-[50px] h-auto"><img className="w-full" src="src\assets\images\pp.png" alt="pic" /></div>
+              <p>Jean michel</p>
+            </div>
+        )}
         <div className="flex flex-col items-center">
           <img
             className="mt-5 h-64"
