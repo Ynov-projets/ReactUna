@@ -20,7 +20,7 @@ type RoomPayload = {
 
 type Card = {
   id: number;
-  color: "red" | "blue" | "green" | "yellow";
+  color: "red" | "blue" | "green" | "yellow"| string;
   value: string;
   effect: string;
 };
@@ -216,16 +216,22 @@ export const Websocket = () => {
                 </div>
               )}
               {playerCards[socket.id] && (
-                <div>
-                    Your Cards: 
-                    {playerCards[socket.id].map((card, index) => (
-                    <div key={index} style={{ border: '1px solid black', margin: '10px', padding: '10px', backgroundColor: card.color }}>
-                        {card.value}
-                        <button onClick={() => playCard(card)}>Play</button>
-                    </div>
-                    ))}
-                </div>
-                )}
+                  <div>
+                      Your Cards: 
+                      {playerCards[socket.id].map((card, index) => (
+                          <div key={index} style={{ border: '1px solid black', margin: '10px', padding: '10px', backgroundColor: card.color }}>
+                              {card.value}
+                              {['Wild', 'Wild Draw Four'].includes(card.value) && ['red', 'green', 'blue', 'yellow'].map(color => (
+                                  <button key={color} onClick={() => {card.color = color; playCard(card);}}>{color}</button>
+                              ))}
+                              {/* If not wild, show play button */}
+                              {!['Wild', 'Wild Draw Four'].includes(card.value) &&
+                              <button onClick={() => playCard(card)}>Play</button>
+                              }
+                          </div>
+                      ))}
+                  </div>
+              )}
               {Object.keys(playerCards).map((player) => (
                 <div key={player}>
                   {player !== socket.id && (
