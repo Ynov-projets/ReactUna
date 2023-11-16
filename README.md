@@ -1,3 +1,7 @@
+⚠⚠ DEPRECRATED ⚠⚠
+
+Please go to this repo instead https://github.com/Gra1gkolodziejczyk/unoReact
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
