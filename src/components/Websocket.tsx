@@ -48,6 +48,7 @@ export const Websocket = () => {
   const [messages, setMessages] = useState<messagePayload[]>([]);
   const [playerCards, setPlayerCards] = useState<Record<string, Card[]>>({});
   const [pile, setPile] = useState<Card[]>([]);
+  const [gameStarted, setGameStarted] = useState(false);
   const socket = useContext(WebsocketContext);
 
   useEffect(() => {
@@ -141,6 +142,7 @@ export const Websocket = () => {
       console.log("gameStart event received");
       console.log(pile);
       setPile(pile.cards);
+      setGameStarted(true);
     });    
 
     return () => {
@@ -158,7 +160,7 @@ export const Websocket = () => {
       socket.off("onCardsDrawn");
       socket.off("disconnect");
     };
-  }, []);
+  }, [socket]);
 
   const onCreateRoom = () => {
     socket.emit("createRoom");
@@ -174,6 +176,16 @@ export const Websocket = () => {
     console.log("Pile before emitting playCard:", pile);
     socket.emit('playCard', { card, room: roomName, lastCard: pile[pile.length - 1], playerHand: playerCards[socket.id] });
   };  
+
+  const handleStartGame = () => {
+    socket.emit("startGame", { roomName: roomName }); // Send startGame event with roomName in payload
+  };
+
+  const handleLeaveRoom = () => {
+    socket.emit("leaveRoom");
+    // refresh the page
+    window.location.reload();
+  }
 
   const handleDraw = () => {
     console.log("Sending drawCard event to the server");
@@ -249,9 +261,14 @@ export const Websocket = () => {
           </div>
         ) : (
           <div>
-            <button onClick={() => socket.emit("disconnect")}>Leave room</button>
+            <button onClick={handleLeaveRoom}>Leave room</button>
           </div>
         )}
+        <div>
+          {!gameStarted && participants.length > 3 && (
+            <button onClick={handleStartGame}>Start Game</button>
+          )}
+        </div>
         {roomName === "" ? (
           <div>No room joined</div>
         ) : (
