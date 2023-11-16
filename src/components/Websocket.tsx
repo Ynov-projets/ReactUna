@@ -18,6 +18,12 @@ type RoomPayload = {
   playerCards: Record<string, Card[]>; // New property for player cards
 };
 
+type turnPayload = {
+  room: string;
+  turn: string;
+  playerHandLength: Record<string, number>;
+};
+
 type Card = {
   id: number;
   color: "red" | "blue" | "green" | "yellow"| string;
@@ -27,6 +33,7 @@ type Card = {
 
 type cardsPayload = {
     cards: Card[],
+    playerHandLength: Record<string, number>,
 };
 
 type playCardPayload = {
@@ -47,6 +54,14 @@ export const Websocket = () => {
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState<messagePayload[]>([]);
   const [playerCards, setPlayerCards] = useState<Record<string, Card[]>>({});
+        /*
+      playerHandLength: Object {
+      "QoCXY65fNNLIZecyAAA1": 1,
+      "7yg4yqecW5zVQ81sAAA3": 2,
+      "bWZTJ2dagIPI-yIoAAA5": 2,
+      "eJ3CvWAtuvLC3cs6AAA7": 2
+      }*/
+  const [playerHandLength, setPlayerHandLength] = useState<Record<string, number>>({});
   const [pile, setPile] = useState<Card[]>([]);
   const [gameStarted, setGameStarted] = useState(false);
   const socket = useContext(WebsocketContext);
@@ -68,11 +83,23 @@ export const Websocket = () => {
       setRoomName(room.room);
       setParticipants(room.participants);
       setPlayerCards({}); // Initialize player cards when the room is created
+      setPlayerHandLength({}); // Initialize player hand length when the room is created
     });
 
-    socket.on("onTurnUpdate", (room: RoomPayload) => {
+    socket.on("onTurnUpdate", (room: turnPayload) => {
       console.log("Turn updated:", room.turn);
+      console.log(room);
+    
+      if (typeof room.playerHandLength === 'object' && room.playerHandLength !== null) {
+        console.log("Received player hand length:", room.playerHandLength);
+        setPlayerHandLength(room.playerHandLength);
+      } else {
+        console.error("Invalid player hand length data received:", room.playerHandLength);
+        console.error("Type:", typeof room.playerHandLength);
+      }
+    
       setTurn(room.turn);
+      console.log("Player hand length:", { playerHandLength });
     });
 
     socket.on('onRoomJoined', (room: RoomPayload) => {
@@ -142,6 +169,7 @@ export const Websocket = () => {
       console.log("gameStart event received");
       console.log(pile);
       setPile(pile.cards);
+      setPlayerHandLength(pile.playerHandLength);
       setGameStarted(true);
     });    
 
@@ -201,7 +229,11 @@ export const Websocket = () => {
             <div>{error}</div>
           ) : (
             <div>
-              Participants in room: {participants.join(", ")} - {participants.length}/4
+              Participants in room: {
+                participants.map((participant) => (
+                  <div key={participant}>{participant} - {gameStarted && playerHandLength[participant]} cards</div>
+                ))
+              } {participants.length}/4
               {turn && <div>Turn: {turn}</div>}
               {turn === socket.id && <div><b>It's your turn to play!</b></div>}
               {pile.length > 0 && (
