@@ -87,7 +87,7 @@ export default function RegistrationMenu() {
                     <label className="pl-1 font-font" htmlFor="password">Mot de passe </label>
                     <br></br>
                     <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
+                    type="password" 
                     placeholder="Mot de passe..."
                     name="password" 
                     value={credentials.password} onChange={onChange}/>
@@ -97,7 +97,7 @@ export default function RegistrationMenu() {
                     <label className="pl-1 font-font" htmlFor="passwordConfirm">Confirmer le mot de passe </label>
                     <br></br>
                     <input className="font-font placeholder:italic placeholder:text-slate-400 bg-grey w-full rounded-2xl leading-7 pl-1"
-                    type="text" 
+                    type="password" 
                     placeholder="Même mot de passe..."
                     name="passwordConfirm" 
                     value={credentials.passwordConfirm} onChange={onChange}/>
